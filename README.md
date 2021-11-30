@@ -9,4 +9,4 @@ Intel Mac only at the moment.
 
 There's the source code, and if you just want the compiled version there's the zip file of the disk image available:
 
-[Splitter install disk image](github.com/charlierobin/splitter/blob/main/Splitter.dmg.zip)
+[Splitter install disk image](github.com/charlierobin/splitter/Splitter.dmg.zip)
