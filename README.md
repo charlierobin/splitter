@@ -9,7 +9,7 @@ Intel Mac only at the moment.
 
 There's the source code, and if you just want the compiled version there's the zip file of the disk image available:
 
-[Splitter install disk image](https://www.dropbox.com/s/jbkmn3dsuvrulcz/Splitter.dmg.zip?dl=0)
+[Splitter install disk image](https://www.amazon.co.uk/clouddrive/share/KCrOt9nZLKZTbOGCqCkfKXKmruBqTfSKVWToE1L075Z)
 
 If you want to tinker and then build from the source code, you'll need to have a version of the ffmpeg command line binary in the ffmpeg folder for Xojo to use during the build process.
 
