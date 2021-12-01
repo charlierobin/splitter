@@ -10,7 +10,7 @@ Begin Window WindowAbout
    HasFullScreenButton=   False
    HasMaximizeButton=   False
    HasMinimizeButton=   False
-   Height          =   428
+   Height          =   486
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -23,7 +23,7 @@ Begin Window WindowAbout
    Title           =   "About Splitter"
    Type            =   0
    Visible         =   True
-   Width           =   664
+   Width           =   658
    Begin Label LabelAbout
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -33,7 +33,7 @@ Begin Window WindowAbout
       FontName        =   "System"
       FontSize        =   0.0
       FontUnit        =   0
-      Height          =   62
+      Height          =   91
       Index           =   -2147483648
       InitialParent   =   ""
       Italic          =   False
@@ -49,11 +49,11 @@ Begin Window WindowAbout
       TabIndex        =   0
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Charlie Robin\n\n2019-2021"
+      Text            =   "Charlie Robin\n\ncharlierobin.com\n\n2019-2021"
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   346
+      Top             =   375
       Transparent     =   False
       Underline       =   False
       Visible         =   True
