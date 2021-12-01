@@ -3,7 +3,7 @@ Protected Class ShellSplitter
 Inherits Shell
 	#tag Event
 		Sub Completed()
-		  RaiseEvent Completed()
+		  RaiseEvent Completed( me.outputFolderF )
 		  
 		  
 		End Sub
@@ -12,33 +12,27 @@ Inherits Shell
 
 	#tag Method, Flags = &h0
 		Sub Execute(audioFile as FolderItem, f as FolderItem, segmentSizeInSeconds as Double)
-		  var projectName as String = audioFile.DisplayName.WithoutExtension()
+		  var projectName as String = audioFile.Name.WithoutExtension()
 		  
-		  // var outputFolderF as FolderItem = audioFile.Parent.Child( projectName + " split" )
+		  var extension as String = audioFile.Name.ExtensionOnly()
 		  
-		  var outputFolderF as FolderItem = f.Child( projectName + " split" )
+		  me.outputFolderF = f.Child( projectName + " split" )
 		  
-		  if not outputFolderF.Exists then
+		  if not me.outputFolderF.Exists then
 		    
-		    outputFolderF.CreateFolder()
+		    me.outputFolderF.CreateFolder()
 		    
 		  else
 		    
-		    for each file as FolderItem in outputFolderF.Children()
-		      
-		      file.Remove()
-		      
-		    next
+		    me.outputFolderF.RemoveContents()
 		    
 		  end if
 		  
-		  var sectionF as FolderItem = outputFolderF.Child( projectName )
+		  var sectionF as FolderItem = me.outputFolderF.Child( projectName )
 		  
-		  var ffmpeg as FolderItem = SpecialFolder.Resources.Child( "ffmpeg" )
+		  var command as String = kCommandTemplate.expandWith( "ffmpeg" : FFmpeg.get().ShellPath, "inputFile" : audioFile.ShellPath, "segmentLength" : segmentSizeInSeconds, "outputPath" : sectionF.ShellPath, "extension" : extension )
 		  
-		  var command as String = ffmpeg.ShellPath + " -i " + audioFile.ShellPath + " -f segment -segment_time " + str( segmentSizeInSeconds ) + " -c copy " + sectionF.ShellPath + "-%03d.mp3"
-		  
-		  // System.DebugLog(command)
+		  Debug.log( command )
 		  
 		  super.Execute( command )
 		  
@@ -48,8 +42,17 @@ Inherits Shell
 
 
 	#tag Hook, Flags = &h0
-		Event Completed()
+		Event Completed(f as FolderItem)
 	#tag EndHook
+
+
+	#tag Property, Flags = &h21
+		Private outputFolderF As FolderItem
+	#tag EndProperty
+
+
+	#tag Constant, Name = kCommandTemplate, Type = String, Dynamic = False, Default = \"$ffmpeg -i $inputFile -f segment -segment_time $segmentLength -reset_timestamps 1 -c copy $outputPath-%03d.$extension", Scope = Private
+	#tag EndConstant
 
 
 	#tag ViewBehavior

@@ -63,6 +63,16 @@ End
 #tag EndWindow
 
 #tag WindowCode
+	#tag MenuHandler
+		Function Close() As Boolean Handles Close.Action
+			self.Close()
+			
+			return true
+			
+		End Function
+	#tag EndMenuHandler
+
+
 #tag EndWindowCode
 
 #tag ViewBehavior

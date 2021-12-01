@@ -7,7 +7,23 @@
 		MacType=Mp3 
 		Name=audio/mp3
 		UTI=public.mp3
-		UTIConformsTo=public.audio,public.data
+		UTIConformsTo=public.audio, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioM4a
+		Extension=.m4a
+		Flags=&h2
+		MacCreator=
+		MacType=M4A 
+		Name=audio/m4a
+		UTI=public.mpeg-4-audio
+		UTIConformsTo=,public.data
 		Description=
 		MimeType=
 		Imported=True

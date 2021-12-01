@@ -1,20 +1,72 @@
 #tag Module
 Protected Module ExtendsString
 	#tag Method, Flags = &h0
+		Function ExpandWith(extends s as String, ParamArray params() as Pair) As String
+		  for each pair as Pair in params
+		    
+		    var name as String = "$" + pair.Left
+		    
+		    var value as Variant = pair.Right
+		    
+		    var valueAsString as String = ""
+		    
+		    select case value.Type
+		      
+		    case Variant.TypeString
+		      
+		      valueAsString = value
+		      
+		    case Variant.TypeInt64
+		      
+		      valueAsString = str( value )
+		      
+		    case Variant.TypeDouble
+		      
+		      var asDouble as Double = value
+		      
+		      valueAsString = asDouble.ToString()
+		      
+		    else
+		      
+		      Debug.log( "Unhandled variant type" )
+		      
+		    end select
+		    
+		    s = s.ReplaceAll( name, valueAsString )
+		    
+		  next
+		  
+		  return s
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
+		Function ExtensionOnly(extends s as String) As String
+		  // TODO tidy all of this up
+		  
+		  var i as Integer = s.CountFieldsB( "." )
+		  
+		  var extension as String = s.NthFieldB( ".", i )
+		  
+		  return extension
+		  
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function WithoutExtension(extends s as String) As String
-		  var name as String = s
+		  if s = "" then return s
 		  
-		  if name = "" then return name
+		  var i as Integer = s.CountFieldsB( "." )
 		  
-		  var i as Integer = name.CountFieldsB( "." )
+		  var ext as String = s.NthFieldB( ".", i )
 		  
-		  var ext as String = name.NthFieldB( ".", i )
+		  If i > 1 and s.InStrB( "." ) = 1 then return s
 		  
-		  If i > 1 and name.InStrB( "." ) = 1 then return name
+		  If i > 1 then return s.LeftB( s.LenB() - ext.LenB() - 1 )
 		  
-		  If i > 1 then return name.LeftB( name.LenB() - ext.LenB() - 1 )
-		  
-		  return name
+		  return s
 		  
 		End Function
 	#tag EndMethod

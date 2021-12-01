@@ -37,6 +37,17 @@ Begin Menu MainMenuBar
          AutoEnable = True
          Visible = True
       End
+      Begin MenuItem Close
+         SpecialMenu = 0
+         Index = -2147483648
+         Text = "Close"
+         ShortcutKey = "W"
+         Shortcut = "Cmd+W"
+         MenuModifier = True
+         AutoEnabled = True
+         AutoEnable = True
+         Visible = True
+      End
    End
    Begin MenuItem EditMenu
       SpecialMenu = 0
