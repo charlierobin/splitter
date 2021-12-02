@@ -1,6 +1,17 @@
 #tag Class
 Protected Class App
 Inherits Application
+	#tag Event
+		Sub OpenDocument(item As FolderItem)
+		  if item = nil or not item.Exists then return
+		  
+		  var w as WindowFile = new WindowFile( item )
+		  
+		  
+		End Sub
+	#tag EndEvent
+
+
 	#tag MenuHandler
 		Function AboutSplitter() As Boolean Handles AboutSplitter.Action
 			WindowAbout.Show()
