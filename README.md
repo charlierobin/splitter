@@ -13,7 +13,7 @@ There's the source code, and if you just want the compiled version there's the z
 
 [Splitter install disk image](https://dl.dropboxusercontent.com/s/jbkmn3dsuvrulcz/Splitter.dmg.zip?dl=0)
 
-If you want to tinker and then build from the source code, you'll need to have a version of the ffmpeg command line binary in the ffmpeg folder for Xojo to use during the build process.
+If you want to tinker and then build from the source code, you'll need to have a version of the FFmpeg command line binary in the “ffmpeg” directory for Xojo to use during the build process.
 
 [The FFmpeg Downloads Page](https://ffmpeg.org/download.html)
 
