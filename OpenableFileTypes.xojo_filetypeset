@@ -23,7 +23,71 @@
 		MacType=M4A 
 		Name=audio/m4a
 		UTI=public.mpeg-4-audio
-		UTIConformsTo=,public.data
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioAiff
+		Extension=.aiff;.aif;.aifc;.cdda
+		Flags=&h2
+		MacCreator=
+		MacType=AIFF
+		Name=audio/aiff
+		UTI=
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h11
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioM4b
+		Extension=.m4b
+		Flags=&h2
+		MacCreator=
+		MacType=M4B 
+		Name=audio/m4b
+		UTI=
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioMp4
+		Extension=.mp4
+		Flags=&h2
+		MacCreator=
+		MacType=mpg4
+		Name=audio/mp4
+		UTI=
+		UTIConformsTo=, public.data
+		Description=
+		MimeType=
+		Imported=True
+		HandlerRank=&h9
+		UTIPhysicalType=public.data
+	#tag EndFileType
+
+	#tag FileType
+		CodeName=AudioWav
+		Extension=.wav;.bwf
+		Flags=&h2
+		MacCreator=
+		MacType=.WAV
+		Name=audio/wav
+		UTI=com.microsoft.waveform-audio
+		UTIConformsTo=, public.data
 		Description=
 		MimeType=
 		Imported=True

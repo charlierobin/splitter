@@ -1,7 +1,9 @@
 # Splitter
 Split big audio files into smaller ones.
 
-Uses FFmpeg. Only works with mp3 and m4a files at the moment.
+Uses FFmpeg.
+
+Opens mp3, m4a, aiff, wav, mp4 and m4b files.
 
 Simply because I had a few monolithic audio book files which I wanted split up into smaller chunks for the audio book app on my phone.
 
